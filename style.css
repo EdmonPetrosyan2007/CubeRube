@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style-type: none;
+    font-weight: 100;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+/* perspective > Խորություն, > Փոխանցել Նախնտրած Դետալի Ծնողին, */
+/* transform-style : preserv3d; > 3d Dostup; */
+/* transform-origin: left, center, ritght, top, bottom > Դետալի Կողմը Ֆիքսել; */
+
+.panel {
+    width: 550px;
+    height: 550px;
+    position: relative;
+    animation: for_cub 19s linear infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes for_cub {
+    to {
+        transform: rotate3D(1, 1, 1, 360deg);
+    }
+}
+
+.block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.col {
+    border-radius: 10px;
+    border: 5px groove white;
+}
+
+.c_1 { background: blue; }
+.c_2 { background: orangered; }
+.c_3 { background: purple; }
+.c_4 { background: slateblue; }
+.c_5 { background: olivedrab; }
+.c_6 { background: yellow; }
+.c_7 { background: teal; }
+.c_8 { background: tan; }
+.c_9 { background: lime; }
+
+.b_1 {
+    transform-origin: left;
+    transform: rotateY(90deg);
+}
+
+.b_2 {
+    transform-origin: top;
+    transform: rotateX(-90deg);
+}
+
+.b_3 {
+    transform-origin: right;
+    transform: rotateY(-90deg);
+}
+
+.b_4 {
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+}
+
+.b_5 {
+    transform: translateZ(-550px);
+}
+
